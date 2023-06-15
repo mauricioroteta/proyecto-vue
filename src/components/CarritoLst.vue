@@ -9,11 +9,14 @@
 <script>
 import { CarritoStore } from "@/stores/CarritoStore";
 
-
-    export default {
+export default {
       name: 'CarritoLst',
-      data: () => ({
-        CarritoStore
-      }),
+      data() {
+        return {
+        items: [
+          { Producto: "Producto 1", Unidades: 1, CostoUnitario: 4, Total: 8 },
+          { Producto: "Producto 2", Unidades: 1, CostoUnitario: 4, Total: 8 },
+        ]}
+        }
     }
 </script>
