@@ -23,13 +23,10 @@
             {{ producto.descripcion }}
         </b-card-text>
 
-        <a href="#" @click="addToCart(producto)">Agregar al carrito</a>
-
-<!--  
         <b-button v-on:click="addToCart">
-          <b-icon icon="cart-plus-fill" class="nav-icon"></b-icon>
+          <b-icon icon="cart-plus-fill" class="nav-icon" @click="addToCart(producto)"></b-icon>
         </b-button>
--->
+
 
     </b-card>
     </b-card-group>
