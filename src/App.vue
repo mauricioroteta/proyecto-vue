@@ -17,8 +17,8 @@
           <ul class="navbar-nav">
             <!-- Badge -->
             <li class="nav-item">
-              <router-link to="/about" class="nav-link active" aria-current="page"> Carrito 
-                <span class="badge badge-pill bg-danger" @addToCart="addToCart1">{{ cant }}</span>
+              <router-link  to="/about" class="nav-link active" aria-current="page"> Carrito 
+                <span class="badge badge-pill bg-danger">{{ cant }}</span>
                 <span><i class="fas fa-shopping-cart"></i></span>
               </router-link>
             </li>
@@ -26,7 +26,7 @@
         </div>
       </b-navbar-nav>
       </nav>
-      <router-view/>
+      <router-view  @add-to-cart="addToCart(producto)"/>
     </div>
 </template>
 
@@ -43,8 +43,8 @@ export default {
   }
   },
 methods: {
-  addToCart1() {
-      console.log('hola')
+  addToCart() {
+      console.log()
       if(this.cant == null){
         this.cant = 0
       }

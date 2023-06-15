@@ -22,7 +22,8 @@
         <b-card-text class="descrip">
             {{ producto.descripcion }}
         </b-card-text>
-        <a href="#" @click="agregar_carrito">Agregar al carrito</a>
+
+        <a href="#" @click="addToCart(producto)">Agregar al carrito</a>
 
 <!--  
         <b-button v-on:click="addToCart">
@@ -112,11 +113,9 @@ export default {
     };
   },
 	methods: {
-		agregar_carrito() {
-      console.log('Ini en local')
-			this.$emit('addToCart')
-      console.log('fin en local')
-		}
+    addToCart(producto) {
+      this.$emit('add-to-cart', producto)
+    }
 	}
 };
 </script>

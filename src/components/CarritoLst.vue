@@ -7,14 +7,13 @@
 </template>
   
 <script>
+import { CarritoStore } from "@/stores/CarritoStore";
+
+
     export default {
       name: 'CarritoLst',
-      data() {
-        return {
-        items: [
-          { Producto: "Producto 1", Unidades: 1, CostoUnitario: 4, Total: 8 },
-          { Producto: "Producto 2", Unidades: 1, CostoUnitario: 4, Total: 8 },
-        ]}
-        }
+      data: () => ({
+        CarritoStore
+      }),
     }
 </script>
