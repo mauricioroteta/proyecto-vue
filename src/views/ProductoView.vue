@@ -23,7 +23,7 @@
             {{ producto.descripcion }}
         </b-card-text>
 
-        <b-button v-on:click="addToCart">
+        <b-button>
           <b-icon icon="cart-plus-fill" class="nav-icon" @click="addToCart(producto)"></b-icon>
         </b-button>
 
