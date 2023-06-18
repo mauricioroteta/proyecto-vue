@@ -35,6 +35,9 @@ pnpm lint
 ```
 
 ## Git
+git remote -v
+git status
+
 git add *
 git commit -m ""
 git push origin main

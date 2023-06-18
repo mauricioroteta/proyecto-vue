@@ -50,7 +50,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 9rem auto;
+  margin: 5rem 1rem 1rem 1rem;
 }
 
 </style>

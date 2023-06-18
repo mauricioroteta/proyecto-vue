@@ -5,10 +5,25 @@
             <a class="navbar-brand">
                 <img src="../assets/logo.png" alt="Logo" height="80  " class="d-inline-block align-text-top">
             </a>
-            <a class="navbar-brand logos">                    
-                    <b-button variant="outline-primary" id="show-btn" @click="$bvModal.show('bv-modal-login')">
-                      <b-icon icon="person-fill"></b-icon> Login
-                    </b-button>
+            <a class="navbar-brand logos">  
+
+              <template>
+                <div >
+                  <b-dropdown variant="outline-primary" >
+                    <template #button-content>
+                      <b-icon icon="person-fill" aria-hidden="true"></b-icon> Usuario
+                    </template>
+                    <b-dropdown-item-button  @click="$bvModal.show('bv-modal-login')">
+                      <b-icon icon="lock-fill" aria-hidden="true"></b-icon>
+                      Iniciar Sesion
+                    </b-dropdown-item-button>
+                    <b-dropdown-item-button variant="danger">
+                      <b-icon icon="power" aria-hidden="true"></b-icon>
+                      Cerrar Sesion
+                    </b-dropdown-item-button>
+                  </b-dropdown>
+                </div>
+              </template>
 
                     <b-button variant="outline-primary" id="show-btn" @click="$bvModal.show('bv-modal-carrito')">
                       <b-icon icon="cart"></b-icon> Carrito

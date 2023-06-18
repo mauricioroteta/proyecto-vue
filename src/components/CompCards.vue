@@ -8,7 +8,7 @@
     </div>
     <footer>
         
-      <button @click="agregarAlCarrito" :disabled="agregado" :enabled="agregado" :class="btnColor" class="btn btn-success">
+      <button @click="agregarArticulo" :disabled="agregado" :enabled="agregado" :class="btnColor" class="btn btn-success">
         {{ agregado ? "Quitar" : "Agregar" }}
       </button>
     </footer>
@@ -47,8 +47,8 @@ export default {
   },
 
   methods: {
-    agregarAlCarrito() {
-      this.appCarrito.agregarAlCarrito(this.item);
+    agregarArticulo() {
+      this.appCarrito.agregarArticulo(this.item);
     },
     formatNumber(floatValue = 0, decimals = 0, multiplier = 1) {
     let floatMultiplied = floatValue * multiplier;

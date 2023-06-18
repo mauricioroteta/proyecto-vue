@@ -30,12 +30,19 @@
                   <td></td>
                   <td></td>
                   <td>Total:</td>
-                  <td>$ {{ formatNumber(total, 2, 1) }}</td>
+                  <td class="importeTotal">$ {{ formatNumber(total, 2, 1) }}</td>
+                  <td>
+                    <comp-pagar />
+                    <b-button variant="success" @click="$bvModal.show('bv-Pagar')">
+                      <b-icon icon="credit-card" ></b-icon> Pagar
+                    </b-button>
+                </td>
                 </tr>
               </tfoot>
             </table>
             <h3 v-else>No hay productos en el Carrito</h3>
     </div>
+
     <div class="botones-carrito">
 
         <b-button variant="danger" @click="borrarTodo()">
@@ -53,11 +60,13 @@
 <script>
 import CompContador from "./CompContador.vue";
 import { appCarrito } from "@/js/appCarrito";
+import CompPagar from "./CompPagar.vue";
 
 export default {
   name: "CompCarrito",
   components:{
     CompContador,
+    CompPagar,
   },
   data: () => ({
     appCarrito
@@ -73,7 +82,7 @@ export default {
   },
   methods: {
     remove(id) {
-      this.appCarrito.removerDelCarrito(id);
+      this.appCarrito.removerArticulo(id);
     },
     borrarTodo(){
       this.appCarrito.vaciarCarrito();
@@ -114,5 +123,10 @@ export default {
   flex-direction: column;
   gap: 1rem;
   margin: 1rem;
+}
+
+.importeTotal{
+  color: red;
+  font-weight: bold;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div class="botones">
-    <button class="btn btn-danger btn-sm" @click="restar" :disabled="noEnCarrito" >➖️</button>
+    <button class="btn btn-sm" @click="restar" :disabled="noEnCarrito" ><b-icon icon="caret-down-fill"></b-icon></button>
     <span>{{ cantidad || 1 }}</span>
-    <button class="btn btn-success btn-sm" @click="sumar" :disabled="noEnCarrito">➕️</button>
+    <button class="btn btn-sm" @click="sumar" :disabled="noEnCarrito"><b-icon icon="caret-up-fill"></b-icon></button>
   </div>
 </template>
 
@@ -22,10 +22,10 @@ export default {
 
   methods: {
     restar() {
-      this.appCarrito.restoCantidad(this.productoId);
+      this.appCarrito.restoCantidadArticulos(this.productoId);
     },
     sumar() {
-      this.appCarrito.aumentoCantidad(this.productoId);
+      this.appCarrito.aumentoCantidadArticulos(this.productoId);
     },
   },
   computed: {
