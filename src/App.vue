@@ -1,7 +1,7 @@
 <template>
   <div>
     <comp-nav-bar />
-    <div class="contenedor-cards">
+    <div class="tarjetas">
       <comp-cards v-for="item in items" :key="item.id" :item="item" />
     </div>
     <CompFooter />
@@ -46,7 +46,7 @@ export default {
 
 
 <style scoped>
-.contenedor-cards {
+.tarjetas {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

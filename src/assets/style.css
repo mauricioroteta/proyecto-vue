@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+  margin: 2;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+#app {
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
