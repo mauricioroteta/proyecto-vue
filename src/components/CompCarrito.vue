@@ -16,7 +16,7 @@
 
               <tbody>
                 <tr v-for="item in productosEnCarrito" :key="item.id">
-                  <td><b-icon icon="Trash" variant="danger" @click="remove(item.id)"></b-icon></td>
+                  <td><span style="cursor: pointer"><b-icon font-scale="1.5" icon="Trash" variant="danger" @click="remove(item.id)"></b-icon></span></td>
                   <td>{{ item.nombre }}</td>
                   <td>$ {{ formatNumber(item.precio, 2, 1) }}</td>
                   <td><comp-contador :productoId="item.id" /></td>
@@ -128,5 +128,8 @@ export default {
 .importeTotal{
   color: red;
   font-weight: bold;
+}
+.icnTrash{
+  height: 15px;
 }
 </style>
