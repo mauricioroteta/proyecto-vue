@@ -5,7 +5,7 @@
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(216, 216, 216, 0.2);">
-      © 2022 Copyright:
+      © 2023 Copyright:
       <a class="text-white" href="">Mauricio Roteta</a>
     </div>
     <!-- Copyright -->
