@@ -1,26 +1,28 @@
 <template>
-  <b-modal id="bv-modal-carrito" size="lg" hide-footer>
+  <b-modal id="bv-modal-carrito" size="xl" hide-footer>
     <template #modal-title>
     </template>
     <div class="d-block text-center">
-      <table class="table " v-if="productosEnCarrito.length">
+      <table class="table align-middle" v-if="productosEnCarrito.length">
               <thead>
                 <tr>
-                  <th class="titleCol" scope="col"></th>
+                  <th class="titleCol" scope="col">Imagen</th>
                   <th class="titleCol" scope="col">Producto</th>
                   <th class="titleCol" scope="col">Precio</th>
                   <th class="titleCol" scope="col">Cantidad</th>
                   <th class="titleCol" scope="col">Total</th>
+                  <th class="titleCol" scope="col"></th>
                 </tr>
               </thead>
 
               <tbody>
                 <tr v-for="item in productosEnCarrito" :key="item.id">
-                  <td><span style="cursor: pointer"><b-icon font-scale="1.5" icon="Trash" variant="danger" @click="remove(item.id)"></b-icon></span></td>
+                  <td><img :src="item.imagen" class="card-img-top imgChica " :alt="item.nombre" /></td>
                   <td>{{ item.nombre }}</td>
                   <td>$ {{ formatNumber(item.precio, 2, 1) }}</td>
                   <td><comp-contador :productoId="item.id" /></td>
                   <td>$ {{ formatNumber(item.qty, 2, 1) }}</td>
+                  <td><span style="cursor: pointer"><b-icon font-scale="1.5" icon="Trash" variant="danger" @click="remove(item.id)"></b-icon></span></td>
                 </tr>
               </tbody>
 
@@ -29,14 +31,15 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td>Total:</td>
-                  <td class="importeTotal">$ {{ formatNumber(total, 2, 1) }}</td>
                   <td>
                     <comp-pagar />
                     <b-button variant="success" @click="$bvModal.show('bv-Pagar')">
                       <b-icon icon="credit-card" ></b-icon> Pagar
                     </b-button>
-                </td>
+                  </td>
+                  <td>Total:</td>
+                  <td class="importeTotal">$ {{ formatNumber(total, 2, 1) }}</td>
+                  <td></td>
                 </tr>
               </tfoot>
             </table>
@@ -131,5 +134,9 @@ export default {
 }
 .icnTrash{
   height: 15px;
+}
+
+.imgChica{
+  width: 100px;
 }
 </style>
